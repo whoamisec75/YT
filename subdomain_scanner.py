@@ -10,10 +10,10 @@ lst = [
     'photos',
     'hack',
     'accounts',
-    'users',
+    'users', #you can add more or you can open a wordlist... 
 ]
 
-domain = 'google.com'
+domain = 'google.com' #specify the domain
 
 def scanner(subdomain):
     build_url = (f'http://{subdomain}.{domain}')
@@ -25,7 +25,7 @@ def scanner(subdomain):
     else:
         pass
 
-with ThreadPoolExecutor(max_workers=20) as executor:
+with ThreadPoolExecutor(max_workers=20) as executor: #you can change "max_workers" according to you :)
     for subdomain in lst:
         executor.submit(scanner, subdomain)
 
